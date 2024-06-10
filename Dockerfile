@@ -11,11 +11,7 @@ ARG TROFFDIR
 ARG NEATROFFREPO
 
 RUN apt-get update -y
-RUN apt install make -y
-RUN apt install gcc -y
-RUN apt install git -y
-RUN apt install wget -y
-RUN apt install unzip -y
+RUN apt install make gcc git wget unzip -y
 RUN git clone $NEATROFFREPO $TROFFDIR && cd $TROFFDIR && make init && make neat
 
 
@@ -28,10 +24,7 @@ ARG CGIDIR
 
 
 RUN apt-get update -y 
-RUN apt install make -y
-RUN apt install ghostscript -y
-RUN apt install zip -y
-#RUN apt install nano -y
+RUN apt install make ghostscript zip -y
 RUN apt clean
 
 
